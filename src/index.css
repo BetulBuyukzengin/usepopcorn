@@ -40,6 +40,13 @@ body {
   background-color: var(--color-primary);
   border-radius: 0.9rem;
 }
+@media only screen and (max-width: 31.25em) {
+  .nav-bar {  
+  grid-template-columns: 1fr;
+    justify-content:center;
+    height:17.2rem;
+  }
+}
 
 @media only screen and (max-width: 31.25em) {
     .main {
@@ -113,6 +120,11 @@ body {
   background-color: var(--color-primary-light);
 }
 
+@media only screen and (max-width: 31.25em) {
+.search {
+width:30rem;
+}
+}
 .search::placeholder {
   color: var(--color-text-dark);
 }
