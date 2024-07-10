@@ -50,12 +50,11 @@ body {
 
 @media only screen and (max-width: 31.25em) {
     .main {
-        align-items: center;
-        column-gap: 1rem;
-        flex-direction: column;
-        gap: 0;
-        margin-top: 18.4rem;
-      justify-content:start;
+    gap: 0;
+    column-gap: 1rem;
+    flex-direction: column;
+    margin-top: 5rem;
+    align-items: center;
     }
 }
 .main {
