@@ -26,13 +26,11 @@ export function useMovies(query) {
           const data = await res.json();
 
           if (data.Response === "False") throw new Error("Movie not found");
-          // console.log(data.Search);
           setMovies(data.Search);
           setError(""); //! Cleanup for http request
         } catch (err) {
           //! Http istekleri temizlemede durdurulan istekleri hata olarak algılamaması için koşul ekledim.
           if (err.name !== "AbortError") {
-            console.log(err.message);
             setError(err.message);
           }
           // setIsLoading(false); burada kullanırsak kodu kopyalar

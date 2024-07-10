@@ -21,8 +21,6 @@ export default function StarRating({
   onSetRating,
 }) {
   const [rating, setRating] = useState(defaultlRating); //click
-  // const [rating, setRating] = useState(0); //click
-
   const [tempRating, setTempRating] = useState(0); //hover
 
   function handleRating(rating) {
@@ -36,20 +34,19 @@ export default function StarRating({
     color,
     fontSize: `${size / 1.5}px`,
   };
-  // Props types controll
+
+  //* Props types controll
   StarRating.propTypes = {
     color: PropTypes.string,
     className: PropTypes.string,
     messages: PropTypes.array,
     maxRating: PropTypes.number,
-    // maxRating: PropTypes.number.isRequired,
     defaultlRating: PropTypes.number,
     size: PropTypes.number,
-    // onSetRating: PropTypes.func,
   };
   return (
     <div style={containerStyle} className={className}>
-      <div style={starContainerStyle}>
+      <div style={starContainerStyle} className="starContainer">
         {Array.from({ length: maxRating }, (_, i) => (
           <Star
             key={i}
@@ -62,7 +59,7 @@ export default function StarRating({
           />
         ))}
       </div>
-      {/* sort circuiting */}
+      {/* short circuiting */}
       <p style={textStyle}>
         {messages.length === maxRating
           ? messages[tempRating ? tempRating - 1 : rating - 1]

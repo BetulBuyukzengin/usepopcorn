@@ -8,9 +8,7 @@ export function useKey(key, action) {
         }
       }
       document.addEventListener("keydown", callback);
-
-      //! Dinleyici temizleme fonk , içerisindeki fonksiyon dinlediğimiz fonk. ile aynı olmalı
-      //* details kapalı olduğunda artık dinleyemeyecek
+      //clean up
       return function () {
         document.removeEventListener("keydown", callback);
       };
