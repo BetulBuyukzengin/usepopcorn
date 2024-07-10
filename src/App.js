@@ -80,7 +80,7 @@ export default function App() {
   //   },
   //   [watched]
   // );
-
+  console.log(movies.length);
   return (
     <>
       <Navbar>
@@ -100,11 +100,13 @@ export default function App() {
         /> */}
         {/* use children !!!!!*/}
         <Box>
+          {movies.length < 1 && !isLoading && !query && <StartSearching />}
           {isLoading && <Loader />}
           {!isLoading && !error && (
             <MovieList movies={movies} onSelectMovie={handleSelectMovie} />
           )}
           {error && <ErrorMessage message={error} />}
+          {/* no movie found yet, and not loading [ Beginning state ] */}
         </Box>
         <Box>
           {selectedId ? (
@@ -438,5 +440,13 @@ function WatchedMovie({ movie, onDeleteWatched }) {
         </button>
       </div>
     </li>
+  );
+}
+// Start Searching Text
+function StartSearching() {
+  return (
+    <p className="loader">
+      Start searching <span>🔍</span>
+    </p>
   );
 }
