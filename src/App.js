@@ -55,36 +55,10 @@ const average = (arr) =>
 const KEY = "7ec2e548";
 
 export default function App() {
-  const [query, setQuery] = useState(""); // Başlangıç değeri verildiğinde effect ilk renderlamada çalışacağından verilen değer gösterilir
-  // const [movies, setMovies] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-  // const [error, setError] = useState("");
+  const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
   const { movies, isLoading, error } = useMovies(query, handleCloseMovie); //! useMovies custom hook call
-
-  //  Effect types çalışma sırası
-  // İlk çalıştığında sıralama: 4-1-2-3
-  // Input a veri girildiğinde sıralama: 4-2-3
-  // useEffect(function () {
-  //   console.log("After initial render");
-  // }, []); //1
-  // useEffect(function () {
-  //   console.log("After every render");
-  // }); //2
-  // useEffect(
-  //   function () {
-  //     console.log("D");
-  //   },
-  //   [query]
-  // ); //3
-  // console.log("During render"); //4
-
-  // //! Locale storage get
-  // const [watched, setWatched] = useState(function () {
-  //   const storedValue = localStorage.getItem("watched") || [];
-  //   return JSON.parse(storedValue);
-  // });
   const [watched, setWatched] = useLocaleStorageState([], "watched");
 
   function handleSelectMovie(id) {
@@ -377,7 +351,6 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
       //cleanup func for change title
       return function () {
         document.title = "usePopcorn";
-        // console.log(title); kapandığında bile title hatırlanacak - closure
       };
     },
     [title]
@@ -413,6 +386,7 @@ function MovieDetails({ selectedId, onCloseMovie, onAddWatched, watched }) {
                     maxRating={10}
                     size={24}
                     onSetRating={setUserRating}
+                    className="containerStyleResponsive"
                   />
                   {userRating > 0 && (
                     <button className="btn-add" onClick={handleAdd}>
@@ -486,7 +460,7 @@ function WatchedMovie({ movie, onDeleteWatched }) {
       <div>
         <p>
           <span>⭐️</span>
-          <span>{movie.imdbRating}</span>
+          <span>{movie.imdb}</span>
         </p>
         <p>
           <span>🌟</span>
