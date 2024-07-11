@@ -21,3 +21,4 @@
 - Performansı artırmak için giriş alanına girilen her veriden sonra önceki API çağrılarının temizlenmesi(Signal abort).
 - React'in bildirimsel yapısını bozmamak için component içinde bir html elementi seçmek için UseRef.
 
+![React-use-Pop-Corn](public/usePopCorn.gif)
