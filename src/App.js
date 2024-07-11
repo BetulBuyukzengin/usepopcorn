@@ -422,7 +422,7 @@ function WatchedMovie({ movie, onDeleteWatched }) {
       <div>
         <p>
           <span>⭐️</span>
-          <span>{movie.imdb}</span>
+          <span>{movie.imdbRating}</span>
         </p>
         <p>
           <span>🌟</span>
