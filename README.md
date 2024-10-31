@@ -18,7 +18,6 @@
 - Veri almak, local storage ve keyPress durumları için custom hooks kullandım.
 - Arayüzü verilerle senkronize tutmak için useState ve useEffect kullandım.
 - Yeniden kullanılabilir StarRating componenti kullandım.
-- Performansı artırmak için giriş alanına girilen her veriden sonra önceki API çağrılarının temizlenmesi(Signal abort).
 - API işlemlerini yönetirken fetch kullanmanın yanı sıra, gereksiz ağ isteklerinden kaçınmak ve kaynak tüketimini optimize etmek için AbortController özelliğini de kullandım. Özellikle kullanıcı etkileşimleri sırasında iptal edilmesi gereken isteklerde signal ile fetch isteklerini kontrol edip AbortController ile dinamik olarak isteği iptal ettim. Bu yöntem sayesinde giriş alanına girilen her veriden sonra önceki API çağrılarının temizlemiş, projemde hızlı ve verimli veri işleme sağlarken kullanıcı deneyimini de iyileştimiş oldum.
 - React'in bildirimsel yapısını bozmamak için component içinde bir html elementi seçmek için UseRef kullandım.
 
