@@ -19,6 +19,7 @@
 - Arayüzü verilerle senkronize tutmak için useState ve useEffect.
 - Yeniden kullanılabilir StarRating componenti.
 - Performansı artırmak için giriş alanına girilen her veriden sonra önceki API çağrılarının temizlenmesi(Signal abort).
+- API işlemlerini yönetirken fetch kullanmanın yanı sıra, gereksiz ağ isteklerinden kaçınmak ve kaynak tüketimini optimize etmek için AbortController özelliğini de kullandım. Özellikle kullanıcı etkileşimleri sırasında iptal edilmesi gereken isteklerde AbortController ile dinamik olarak isteği iptal ettim. Bu yöntem sayesinde projende hızlı ve verimli veri işleme sağlarken kullanıcı deneyimini de iyileştimiş oldum.
 - React'in bildirimsel yapısını bozmamak için component içinde bir html elementi seçmek için UseRef.
 
 ![React-use-Pop-Corn](public/usePopCorn.gif)
